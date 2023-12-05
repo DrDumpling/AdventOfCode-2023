@@ -41,8 +41,8 @@ fn puzzle_2() -> u32 {
     sum
 }
 
-fn get_possible_value(line: &String, indexed_value: usize) -> Option<u32> {
-    let written_numbers = vec!["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+fn get_possible_value(line: &str, indexed_value: usize) -> Option<u32> {
+    let written_numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
     if line.chars().nth(indexed_value).unwrap().is_numeric() {
         return line.chars().nth(indexed_value).unwrap().to_digit(10);
@@ -54,7 +54,7 @@ fn get_possible_value(line: &String, indexed_value: usize) -> Option<u32> {
         }
     }
 
-    return None;
+    None
 }
 
 fn get_line_word_values(line: String) -> (u32, u32) {
